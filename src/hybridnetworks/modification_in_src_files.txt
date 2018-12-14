@@ -1,0 +1,17 @@
+1. in src/hybridnetworks/common.h
+
+
+2. in network_compiler.h:
+    #include "src/example/LinearCRF/linear_crf_network.h"
+    Modification:
+    #include "../example/LinearCRF/linear_crf_network.h"
+
+3. in linear_CRF_network_compiler.h:
+    #include "src/src/hybridnetworks/table_lookup_network.h"
+    Modification:
+    #include "../../hybridnetworks/table_lookup_network.h"
+
+4.  in global_network_param.cpp
+    this->ptr_feature2rep[featureId] = new std::string[3]{type, output, input};
+    Modification:
+    this->ptr_feature2rep[featureId] = new std::string[3];
